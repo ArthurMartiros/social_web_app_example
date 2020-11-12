@@ -1,0 +1,28 @@
+﻿@using SocialWebApp.Models
+@model SocialWebApp.Models.CentersNameModel
+@{
+    ViewBag.Title = "CenterName";
+}
+@using (Html.BeginForm("CenterName", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Create a new account.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @*@Html.LabelFor(m => m.EducationType, new { @class = "col-md-2 control-label" })*@
+        <label>Choose your educaton center</label>
+        <div class="col-md-10">
+            @*@Html.DropDownListFor(x => x.CenterName, new SelectList(Enum.GetNames(CentersNameModel))))*@
+            @Html.TextBoxFor(m => m.CenterName, new { @class = "col-md-2 control-label" })
+            @Html.ValidationMessageFor(m => m.CenterName, "", new { @class = "text-danger" })
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Log in" class="btn btn-default" />
+        </div>
+    </div>
+}

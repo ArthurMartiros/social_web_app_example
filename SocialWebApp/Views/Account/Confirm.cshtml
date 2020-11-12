@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Confirm";
+}
+@if (!ViewBag.Wrong)
+{
+    <h2>your confirmation request will successfuly send if your maintioned @ViewBag.Email is valid email</h2>
+    
+    <h2>Please check your maintioned email adress and confirm</h2>
+}
+else
+{
+    <h2>Some problem occured with your email please try again and poind valid email in the opposite case you can not 
+    confirm your email address</h2>
+}
+
+
